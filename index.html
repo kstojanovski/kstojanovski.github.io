@@ -2,43 +2,103 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <script>
+    function hideOtherContent(contentId) {
+      for(divElement of document.querySelector("main").querySelectorAll("div")) {
+        divElement.style.display = divElement.id !== contentId ? "none" : ""
+      }
+    }
+    </script>
     <style>
       html {
         font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
       }
-      h2, h3, a {
-        color: lightskyblue;
-      }
       body {
-        width: 780px;
-        padding-left: 20px;
+        width: 600px;
+        margin-left:auto;
+        margin-right:auto;
+        padding: 10px;
         background-color: black;
         color: whitesmoke;
       }
-      dt {
-        display: none;
-      }
-      dl {
-        img {
-          width:15%;
-          float:left;
-          margin-right:20px;
+      header {
+        left-container {
+          float: left;
+          width: 50%;
         }
+        right-container {
+          text-align:right;
+          float:right;
+          width: 50%;
+        }
+        personal-information {
+          h2 {
+              margin-top: auto;
+              margin-bottom: auto;
+            }
+          h3 {
+            color: lightgray;
+            margin-top: auto;
+          }
+          img {
+            width:20%;
+            float:left;
+            margin-right:20px;
+            border-radius:9999px;
+          }
+        }
+        social-networks {
+          display: inline-block;
+          margin-bottom: 10px;
+          margin-bottom: 10px;
+          img {
+            width:10%;
+            background-color:white;
+            border-radius:5px;
+            margin-top: 10px;
+            float:left;
+            margin-right:15px;
+          }
+        }
+        work {
+          dd {
+            margin-right: 65px;
+          }
+          dt {
+            display: none;
+          }
+          dl {
+            a {
+              cursor: pointer;
+            }
+          }
+          img {
+            width:20%;
+            float:right;
+            margin-left:5px;
+            border-radius:9999px;
+          }
+          h2 {
+            margin-top: auto;
+          }
+        }
+      }
+      main {
+        clear:both
+      }
+      h2, h3, a {
+        color: lightskyblue;
       }
       li {
         padding-top: 5px;
         padding-bottom: 5px;
       }
-      header {
-        img {
-          width:10%;
-          float:left;
-          margin-right:20px;
-          border-radius:9999px;
-        }
-        h3 {
-          color: lightgray;
-        }
+      img {
+        border: 1px solid black;
+      }
+      img:hover {
+        opacity: 0.7;
+        border: 1px solid lightskyblue;
       }
       */
     </style>
@@ -46,98 +106,101 @@
   </head>
   <body>
     <header>
-      <img src="./images/kosta_stojanovski.jpg">
-      <h2>Kosta Stojanovski</h2>
-      <h3>Software Developer</h3>
-    </header>
-    <main>
-      <table style="width:100%">
-        <tr style="text-align:left">
-          <th><h2>Work</h2></th>
-          <th><h2>Social Networks</h2></th>
-        </tr>
-        <tr style="vertical-align:top">
-        <td>
+      <left-container>
+        <personal-information>
+          <a href="index.html"><img src="./images/kosta_stojanovski.jpg"></a>
+          <h2>Kosta Stojanovski</h2>
+          <h3>Software Developer</h3>
+        </personal-information>
+        <social-networks>
+          <a target="_blank" title="LinkedIn" href="https://de.linkedin.com/in/kostastojanovski">
+            <img src="./icons/linkedin.png">
+          </a>
+          <a target="_blank" title="Xing" href="https://www.xing.com/profile/Kosta_Stojanovski">
+            <img src="./icons/xing.png">
+          </a>
+          <a target="_blank" title="Medium" href="https://medium.com/@kosta.stojanovski">
+            <img src="./icons/medium.png">
+          </a>
+          <a target="_blank" title="DZone" href="https://dzone.com/users/1157757/stojanok.html">
+            <img src="./icons/dzone.png">
+          </a>
+          <a target="_blank" title="GitHub" href="https://github.com/kstojanovski">
+            <img src="./icons/github.png">
+          </a>
+          <a target="_blank" title="Stack Overflow" href="https://stackoverflow.com/users/2650023/kosta-stojanovski">
+            <img src="./icons/stackoverflow.png">
+          </a>
+        </social-networks>
+        <ul>
+          <li>Agile</li>
+          <li>Back End</li>
+          <li>Front End</li>
+          <li>Architecture</li>
+        </ul>
+      </left-container>
+      <right-container>
+        <work>
+            <h2>Work</h2>
+            <dl>
+              <a onClick="hideOtherContent('novatec_content')"><img src="./images/novate_logo.png" ></a>
+              <dt>Company</dt>
+              <dd>Novatec Consulting</dd>
+              <dt>Role</dt>
+              <dd>Senior Software Engineer</dd>
+              <dt>Date</dt>
+              <dd>2022 - Present</dd>
+            </dl>
           <dl>
-            <img src="./images/novatec.png">
+            <a onClick="hideOtherContent('hogrefe_content')"><img src="./images/hogrefeverlag_logo.jpg"></a>
             <dt>Company</dt>
-            <dd>Novatec Consulting GmbH</dd>
-            <dt>Role</dt>
-            <dd>Senior Software Engineer</dd>
-            <dt>Date</dt>
-            <dd>2022 - Present</dd>
-          </dl>
-          <br>
-          <dl>
-            <img style="border-radius:9999px" src="./images/hogrefeverlag_logo.jpg">
-            <dt>Company</dt>
-            <dd>Hogrefe Verlag GmbH &amp; Co. KG </dd>
+            <dd>Hogrefe Verlag</dd>
             <dt>Role</dt>
             <dd>Software Developer</dd>
             <dt>Date</dt>
             <dd>2010 - 2022</dd>
           </dl>
-          <br>
           <dl>
-            <img src="./images/blackbit_digital_commerce_gmbh_logo.jpg">
+            <a onClick="hideOtherContent('blackbit_content')"><img src="./images/blackbit_logo.jpg"></a>
             <dt>Company</dt>
-            <dd>Blackbit neue Medien GmbH </dd>
+            <dd>Blackbit neue Medien</dd>
             <dt>Role</dt>
             <dd>Application Developer</dd>
             <dt>Date</dt>
             <dd>2006 - 2010</dd>
           </dl>
-        </td>
-        <td>
-          <ul>
-            <li>Professional Networking
-              <ul>
-                <li><a target="_blank" href="https://de.linkedin.com/in/kostastojanovski">LinkedIn</a></li>
-                <li><a target="_blank" href="https://www.xing.com/profile/Kosta_Stojanovski">Xing</a></li>
-              </ul>
-            </li>
-            <li>Blogging
-              <ul>
-                <li><a target="_blank" href="https://medium.com/@kosta.stojanovski">Medium</a></li>
-                <li><a target="_blank" href="https://dzone.com/users/1157757/stojanok.html">DZone</a></li>
-              </ul>
-            </li>
-            <li>Coding
-              <ul>
-                <li><a target="_blank" href="https://github.com/kstojanovski">GitHub</a></li>
-                <li><a target="_blank" href="https://stackoverflow.com/users/2650023/kosta-stojanovski">stack overflow</a></li>
-              </ul>
-            </li>
-          </ul>
-        </td>
-        </tr>
-      </table>
-      <br>
-      <h2>About me</h2>
-      <h3>Introduction</h3>
-      <p>
-      I am an agile software developer and like to develop software, primarily in the back end and secondary in the front end. What I like less is working on the DevOps tasks like continues integration and delivery stuff.
-      </p>
-      <h3>University</h3>
-      <p><i>The history of programming</i></p>
-      <p>
-      Studying computer science at the university felt like learning the history of programming languages in the timeline from the structural style of programming to the object orientation, from the age when the methods were called type-bonded functions and object destruction was used to the age of the garbage collector.
-      </p>
-      <h3>Blackbit</h3>
-      <p><i>Only a few people $MAYBE understand PrimeBase</i></p>
-      <p>
-      My first job as an application developer was based on the not-so-popular tech stack PrimeBase which is not used any more. $MAYBE was the third boolean state which made us very suspicious about the language and worried us, especially when the application server started, and the state $MAYBE in the log output was listed.
-      </p>
-      <h3>Hogrefe</h3>
-      <p title="The actual term was psycho logic"><i>The logic of psychology</i></p>
-      <p>
-      As a software developer at "Hogrefe" I needed to implement evaluation rules which were extraordinary and unusual from my point of view as a nondomain specialist. That's how the term "logic of psychology" was born.
-      </p>
-      <h3>Novatec</h3>
-      <p><i>It's full of annotations!</i></p>
-      <p>
-      At "Novatec" I have learned new programming languages, libraries, frameworks, principles, etc., and learning SpringBoot, means learning a myriad of different annotations. A scene from the movie "2001: A Space Odyssey" flashed to my mind, with all the stars - analogy here, the screen with all those annotations.
-      </p>
+        </work>
+      </right-container>
+    </header>
+    <main>
+      <div id="novatec_content">
+        <h3>Novatec</h3>
+        <p><i>It's full of annotations!</i></p>
+        <p>
+        At "Novatec" I have learned new programming languages, libraries, frameworks, principles, etc., and learning SpringBoot, means learning a myriad of different annotations. A scene from the movie "2001: A Space Odyssey" flashed to my mind, with all the stars - analogy here, the screen with all those annotations.
+        </p>
+      </div>
+      <div id="hogrefe_content">
+        <h3>Hogrefe</h3>
+        <p title="The actual term was psycho-logic"><i>The logic of psychology</i></p>
+        <p>
+        As a software developer at "Hogrefe" I needed to implement evaluation rules which were extraordinary and unusual from my point of view as a nondomain specialist. That's how the term "logic of psychology" was born.
+        </p>
+      </div>
+      <div id="blackbit_content">
+        <h3>Blackbit</h3>
+        <p><i>Only a few people $MAYBE understand PrimeBase</i></p>
+        <p>
+        My first job as an application developer was based on the not-so-popular tech stack PrimeBase which is not used any more. $MAYBE was the third boolean state which made us very suspicious about the language and worried us, especially when the application server started, and the state $MAYBE in the log output was listed.
+        </p>
+      </div>
+      <div style="display:none" id="university_content">
+        <h3>University</h3>
+        <p><i>The history of programming</i></p>
+        <p>
+        Studying computer science at the university felt like learning the history of programming languages in the timeline from the structural style of programming to the object orientation, from the age when the methods were called type-bonded functions and object destruction was used to the age of the garbage collector.
+        </p>
+      </div>
     </main>
     <footer></footer>
   </body>
