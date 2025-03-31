@@ -3,9 +3,14 @@
   <head>
     <meta charset="utf-8">
     <script>
+    function showAllContent() {
+      for(divElement of document.querySelector("main").querySelectorAll("div")) {
+        divElement.style.display = "";
+      }
+    }
     function hideOtherContent(contentId) {
       for(divElement of document.querySelector("main").querySelectorAll("div")) {
-        divElement.style.display = divElement.id !== contentId ? "none" : ""
+        divElement.style.display = divElement.id !== contentId ? "none" : "";
       }
     }
     </script>
@@ -39,6 +44,9 @@
           h3 {
             color: lightgray;
             margin-top: auto;
+          }
+          a {
+            cursor: pointer;
           }
           img {
             width:20%;
@@ -108,7 +116,7 @@
     <header>
       <left-container>
         <personal-information>
-          <a href="index.html"><img src="./images/kosta_stojanovski.jpg"></a>
+          <a onClick="showAllContent()"><img src="./images/kosta_stojanovski.jpg"></a>
           <h2>Kosta Stojanovski</h2>
           <h3>Software Developer</h3>
         </personal-information>
@@ -194,6 +202,7 @@
         My first job as an application developer was based on the not-so-popular tech stack PrimeBase which is not used any more. $MAYBE was the third boolean state which made us very suspicious about the language and worried us, especially when the application server started, and the state $MAYBE in the log output was listed.
         </p>
       </div>
+      <!--
       <div style="display:none" id="university_content">
         <h3>University</h3>
         <p><i>The history of programming</i></p>
@@ -201,6 +210,7 @@
         Studying computer science at the university felt like learning the history of programming languages in the timeline from the structural style of programming to the object orientation, from the age when the methods were called type-bonded functions and object destruction was used to the age of the garbage collector.
         </p>
       </div>
+      -->
     </main>
     <footer></footer>
   </body>
