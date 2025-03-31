@@ -24,17 +24,27 @@
         margin-right:auto;
         padding: 10px;
         background-color: black;
-        color: whitesmoke;
+        color: #a1a1aa;
       }
       header {
         left-container {
           float: left;
-          width: 50%;
+          width: 45%;
+          background-color: #18181b;
+          border: 2px solid #27272c;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 10px;
         }
         right-container {
           text-align:right;
           float:right;
-          width: 50%;
+          width: 45%;
+          background-color: #18181b;
+          border: 2px solid #27272c;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 10px;
         }
         personal-information {
           h2 {
@@ -42,7 +52,7 @@
               margin-bottom: auto;
             }
           h3 {
-            color: lightgray;
+            color: #a1a1aa;
             margin-top: auto;
           }
           a {
@@ -53,12 +63,11 @@
             float:left;
             margin-right:20px;
             border-radius:9999px;
+            opacity: 0.7;
           }
         }
         social-networks {
           display: inline-block;
-          margin-bottom: 10px;
-          margin-bottom: 10px;
           img {
             width:10%;
             background-color:white;
@@ -66,6 +75,7 @@
             margin-top: 10px;
             float:left;
             margin-right:15px;
+            opacity: 0.7;
           }
         }
         work {
@@ -85,17 +95,26 @@
             float:right;
             margin-left:5px;
             border-radius:9999px;
+            opacity: 0.7;
           }
-          h2 {
+          h2, h3 {
             margin-top: auto;
+            margin-right: 10px;
           }
         }
       }
       main {
-        clear:both
+        clear:both;
+        background-color: #18181b;
+        border: 2px solid #27272c;
+        border-radius: 10px;
+        padding: 10px;
+        i {
+          color: #a1a1aa;
+        }
       }
       h2, h3, a {
-        color: lightskyblue;
+        color: grey;
       }
       li {
         padding-top: 5px;
@@ -105,8 +124,8 @@
         border: 1px solid black;
       }
       img:hover {
-        opacity: 0.7;
-        border: 1px solid lightskyblue;
+        opacity: 0.5;
+        border: 1px solid grey;
       }
       */
     </style>
@@ -149,7 +168,7 @@
       </left-container>
       <right-container>
         <work>
-            <h2>Work</h2>
+            <h3>Work</h3>
             <dl>
               <a onClick="hideOtherContent('novatec_content')"><img src="./images/novate_logo.png" ></a>
               <dt>Company</dt>
